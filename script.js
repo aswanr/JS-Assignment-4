@@ -83,21 +83,31 @@ const name1 = document.getElementById("name");
 const phonenumber = document.getElementById("Phonenumber");
 const Comname = document.getElementById("Com-name");
 const pin = document.getElementById("pin");
-const error = document.getElementById("error");
-form.addEventListener('submit', function (event) {
-
-    if (name1.value == "" || phonenumber.value == "" || Comname.value == "" || pin.value == "") {
-        error.innerHTML = "requied iteams"
-        event.preventDefault(event);
+form.addEventListener('submit', function(event)
+{
+    event.preventDefault(event);
+    if (name1.value === ""){
+        document.getElementById("nameerror").innerHTML="Name Required";
+    }
+    if (phonenumber.value === ""){
+        document.getElementById("numbererror").innerHTML="Phonenumber required";
+    }
+    if (Comname.value === ""){
+        document.getElementById("companynameerror").innerHTML="Company name required";
+    }
+    if (pin.value === ""){
+        document.getElementById("pincodeerrro").innerHTML="Name Required";
+    }
+    if (!Number(phonenumber.value)) {
+                    document.getElementById("numbererror").innerHTML="Must be a Integer";
+                    event.preventDefault(event);
+        }
+    if(!Number(pin.value)){
+        document.getElementById("pincodeerrro").innerHTML="Must be a Integer";
     }
     else {
-        if (!Number(phonenumber.value) || !Number(pin.value)) {
-            error.innerHTML = "number required"
-            event.preventDefault(event);
-        }
-        else {
             if (phonenumber.value.length != "10") {
-                error.innerHTML = "10 numbers required";
+                document.getElementById("numbererror").innerHTML="Number length should be 10"
                 event.preventDefault(event);
             }
             else {
@@ -108,9 +118,8 @@ form.addEventListener('submit', function (event) {
                 document.getElementById("form").reset();
                 event.preventDefault(event);
             }
-        }
-    }
-})
+            
+}}) 
 function prepopulate() {
     if (localStorage.getItem('name') === name1.value || localStorage.getItem('phonenumber') === phonenumber.value) {
         error.innerHTML = "fonded same data";
