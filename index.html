@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-4</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        #question-1 {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            border: 2px solid blue;
+        }
+        #selectionSpace{
+            width: 250px;
+        }
+        #sel-languge{
+            width: 250px;
+        }
+        button{
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="question-1">
+        <p id="para"></p>
+    </div>
+    <hr>
+    <button type="button" id="hide-div" onclick="divhide()">Hide-div</button>
+    <button type="button" id="change-colour" onclick="changecolour()">Change-colour</button>
+    <button type="button" id="details" onclick="details()">Details</button>
+    <select id="numberSelect" onchange="selections()">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <hr>
+    <div class="second-q">
+    <div id="selectionSpace"></div>
+    <button type="button" onclick="selectlanguge('JavaScript')" >JavaScript</button>
+    <button type="button" onclick="selectlanguge('Python')" >Python</button>
+    <button type="button" onclick="selectlanguge('Java')" >Java</button>
+    <button type="button" onclick="selectlanguge('C++')" >C++</button>
+    <button type="button" onclick="selectlanguge('Ruby')" >Ruby</button>
+    <button type="button" onclick="selectlanguge('PHP')" >PHP</button>
+    <button type="button" onclick="selectlanguge('Swift')" >Swift</button>
+    <button type="button" onclick="selectlanguge('C#')" >C#</button>
+    <button type="button" onclick="selectlanguge('RUST')" >RUST</button>
+    <button type="button" onclick="selectlanguge('GO')" >GO</button>
+    </div>
+     <hr>
+    <div id="sel-languge"></div>
+    <div id="error"></div>
+    <form id="form">
+        <input type="text" placeholder="name" id="name" >
+        <input type="text" placeholder="Phonenumber" id="Phonenumber" >
+        <input type="text" placeholder="Companyname" id="Com-name" >
+        <input type="text" placeholder="pin code" id="pin">
+        <input type="submit">
+    </form>
+    <button id="prepopulate"  type="button" onclick="prepopulate()">prepopulate</button>
+    <hr>
+    <form id="form2">
+        <label for="tit">Tab Title</label>
+        <input type="text" id="textfield">
+        <input type="submit" id="submitt1">
+    </form>
+    <hr>
+    <script src="./script.js"></script>
+</body>
+
+</html>
